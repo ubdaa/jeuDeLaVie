@@ -3,8 +3,9 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <windows.h>
 
-int main()
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
     //initialisation des variables par défaut qui vont servir au code du jeu
     int boxSize = 4;
@@ -135,9 +136,12 @@ int main()
 
                 //on choisit selon l'état vivant ou mort puis on va lui assigner une couleur
                 switch (matrice[x][y]) {
+
+                    //dans le cas où la cellule est morte
                     case 0 :
                         cell.setFillColor(sf::Color(154, 135, 157));
                         break;
+                    //dans le cas où la cellule est vivante
                     case 1 :
                         cell.setFillColor(sf::Color(86, 52, 64));
                         break;
